@@ -19,9 +19,9 @@ window.onload = function() {
         // Load an image and call it 'logo'.
         game.load.tilemap('Pacific', 'assets/ocean.json', null, Phaser.Tilemap.TILED_JSON);
         game.load.image('tiles', 'assets/water.jpg' );
-        game.load.image('player', 'assets/boat.png');
+        game.load.spritesheet('player', 'assets/boat.png', 26, 26);
         game.load.image('trash', 'assets/trash.png');
-        game.load.image('dolphin', 'assets/dolphin.png');
+        game.load.spritesheet('dolphin', 'assets/dolphin.png', 26, 26);
     }
     
     var map;
@@ -38,6 +38,10 @@ window.onload = function() {
         layer = map.createLayer('Map');
         layer.resizeWorld();
         //layer.wrap = true;
+        
+        player = game.add.sprite(1 * 26, 1 * 26, 'player');
+        
+        game.camera.follow(player);
         
         cursors = game.input.keyboard.createCursorKeys();
         // Create a sprite at the center of the screen using the 'logo' image.
