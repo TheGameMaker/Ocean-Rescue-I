@@ -17,8 +17,8 @@ window.onload = function() {
     
     function preload() {
         // Load an image and call it 'logo'.
-        game.load.tilemap('Pacific', 'assets/super_mario.json', null, Phaser.Tilemap.TILED_JSON);
-        game.load.image('tiles', 'assets/super_mario.png' );
+        game.load.tilemap('Pacific', 'assets/animated_ocean.json', null, Phaser.Tilemap.TILED_JSON);
+        game.load.image('tiles', 'assets/water3.png' );
         game.load.spritesheet('player', 'assets/boat.png', 26, 26);
         game.load.image('trash', 'assets/trash.png');
         game.load.spritesheet('dolphin', 'assets/dolphin.png', 26, 26);
@@ -33,9 +33,9 @@ window.onload = function() {
         game.stage.backgroundColor = '#787878';
         
         map = game.add.tilemap('Pacific');
-        map.addTilesetImage('SuperMarioBros-World1-1', 'tiles');
+        map.addTilesetImage('water3', 'tiles');
         
-        layer = map.createLayer('World1');
+        layer = map.createLayer('Ocean');
         layer.resizeWorld();
         //layer.wrap = true;
         
