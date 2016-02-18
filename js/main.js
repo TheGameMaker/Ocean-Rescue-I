@@ -42,6 +42,7 @@ window.onload = function() {
         player = game.add.sprite(1 * 26, 1 * 26, 'player');
         
         game.camera.follow(player);
+        game.physics.enable(player, Phaser.Physics.ARCADE);
         
         cursors = game.input.keyboard.createCursorKeys();
         // Create a sprite at the center of the screen using the 'logo' image.
