@@ -33,7 +33,7 @@ window.onload = function() {
         game.stage.backgroundColor = '#787878';
         
         map = game.add.tilemap('ocean');
-        map.addTilesetImage('Ocean', 'tiles');
+        map.addTilesetImage('ocean', 'tiles');
         
         layer = maper.createLayer('Ocean');
         layer.resizeWorld();
