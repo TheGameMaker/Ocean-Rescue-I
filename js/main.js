@@ -71,16 +71,16 @@ window.onload = function() {
         // new trajectory.
         //bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, this.game.input.activePointer, 500, 500, 500 );
         if(cursors.left.isDown){
-            player.body.velocity.x = -350;
+            player.body.velocity.x = -26;
         }
         if(cursors.right.isDown){
-            player.body.velocity.x = 350;
+            player.body.velocity.x = 26;
         }
         if(cursors.up.isDown){
-            player.body.velocity.y = 350;
+            player.body.velocity.y = 26;
         }
         if(cursors.down.isDown){
-            player.body.velocity.y = -350;
+            player.body.velocity.y = -26;
         }
     }
 };
