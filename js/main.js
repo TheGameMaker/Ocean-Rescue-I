@@ -35,7 +35,7 @@ window.onload = function() {
         map = game.add.tilemap('Pacific');
         map.addTilesetImage('Ocean', 'tiles');
         
-        layer = maper.createLayer('Map');
+        layer = map.createLayer('Map');
         layer.resizeWorld();
         layer.wrap = true;
         
