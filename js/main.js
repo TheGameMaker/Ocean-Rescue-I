@@ -33,11 +33,11 @@ window.onload = function() {
         game.stage.backgroundColor = '#787878';
         
         map = game.add.tilemap('Pacific');
-        map.addTilesetImage('Ocean', 'tiles');
+        map.addTilesetImage('tiles');
         
         layer = map.createLayer('Map');
         layer.resizeWorld();
-        layer.wrap = true;
+        //layer.wrap = true;
         
         cursors = game.input.keyboard.createCursorKeys();
         // Create a sprite at the center of the screen using the 'logo' image.
