@@ -77,10 +77,10 @@ window.onload = function() {
             player.body.velocity.x = 26;
         }
         if(cursors.up.isDown){
-            player.body.velocity.y = 26;
+            player.body.velocity.y = -26;
         }
         if(cursors.down.isDown){
-            player.body.velocity.y = -26;
+            player.body.velocity.y = 26;
         }
     }
 };
