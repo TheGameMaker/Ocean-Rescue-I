@@ -13,32 +13,49 @@ window.onload = function() {
     
     "use strict";
     
-    var game = new Phaser.Game( 800, 600, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
+    var game = new Phaser.Game( 800, 600, Phaser.CANVAS, 'game', { preload: preload, create: create, update: update } );
     
     function preload() {
         // Load an image and call it 'logo'.
-        game.load.image( 'logo', 'assets/phaser.png' );
+        game.load.tilemap('ocean', 'assets/ocean.json', null, Phaser.Tilemap.TILED_JSON);
+        game.load.image('tiles', 'assets/water.jpg' );
+        game.load.image('player', 'assets/boat.png');
+        game.load.image('trash', 'assets/trash.png');
+        game.load.image('dolphin', 'assets/dolphin.png');
     }
     
-    var bouncy;
+    var map;
+    var layer;
+    var p;
+    var cursors;
     
     function create() {
+        game.stage.backgroundColor = '#787878';
+        
+        map = game.add.tilemap('ocean');
+        map.addTilesetImage('Ocean', 'tiles');
+        
+        layer = maper.createLayer('Ocean');
+        layer.resizeWorld();
+        layer.wrap = true;
+        
+        cursors = game.input.keyboard.createCursorKeys();
         // Create a sprite at the center of the screen using the 'logo' image.
-        bouncy = game.add.sprite( game.world.centerX, game.world.centerY, 'logo' );
+        //bouncy = game.add.sprite( game.world.centerX, game.world.centerY, 'logo' );
         // Anchor the sprite at its center, as opposed to its top-left corner.
         // so it will be truly centered.
-        bouncy.anchor.setTo( 0.5, 0.5 );
+        //bouncy.anchor.setTo( 0.5, 0.5 );
         
         // Turn on the arcade physics engine for this sprite.
-        game.physics.enable( bouncy, Phaser.Physics.ARCADE );
+        //game.physics.enable( bouncy, Phaser.Physics.ARCADE );
         // Make it bounce off of the world bounds.
-        bouncy.body.collideWorldBounds = true;
+        //bouncy.body.collideWorldBounds = true;
         
         // Add some text using a CSS style.
         // Center it in X, and position its top 15 pixels from the top of the world.
-        var style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
-        var text = game.add.text( game.world.centerX, 15, "Build something awesome.", style );
-        text.anchor.setTo( 0.5, 0.0 );
+        //var style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
+        //var text = game.add.text( game.world.centerX, 15, "Build something awesome.", style );
+        //text.anchor.setTo( 0.5, 0.0 );
     }
     
     function update() {
@@ -47,6 +64,7 @@ window.onload = function() {
         // in X or Y.
         // This function returns the rotation angle that makes it visually match its
         // new trajectory.
-        bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, this.game.input.activePointer, 500, 500, 500 );
+        //bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, this.game.input.activePointer, 500, 500, 500 );
+        
     }
 };
