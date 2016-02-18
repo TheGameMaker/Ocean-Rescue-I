@@ -33,7 +33,7 @@ window.onload = function() {
         game.stage.backgroundColor = '#787878';
         
         map = game.add.tilemap('Pacific');
-        map.addTilesetImage('tiles');
+        map.addTilesetImage('Ocean', 'tiles');
         
         layer = map.createLayer('Map');
         layer.resizeWorld();
@@ -69,6 +69,17 @@ window.onload = function() {
         // This function returns the rotation angle that makes it visually match its
         // new trajectory.
         //bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, this.game.input.activePointer, 500, 500, 500 );
-        
+        if(cursors.left.isDown){
+            player.body.velocity.x = -350;
+        }
+        if(cursors.right.isDown){
+            player.body.velocity.x = 350;
+        }
+        if(cursors.up.isDown){
+            player.body.velocity.y = 350;
+        }
+        if(cursors.down.isDown){
+            player.body.velocity.y = -350;
+        }
     }
 };
