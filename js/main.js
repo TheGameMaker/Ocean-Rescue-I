@@ -17,8 +17,8 @@ window.onload = function() {
     
     function preload() {
         // Load an image and call it 'logo'.
-        game.load.tilemap('Pacific', 'assets/stillocean2.json', null, Phaser.Tilemap.TILED_JSON);
-        game.load.image('tiles', 'assets/water4.png' );
+        game.load.tilemap('Pacific', 'assets/smallocean.json', null, Phaser.Tilemap.TILED_JSON);
+        game.load.image('tiles', 'assets/water.png' );
         game.load.spritesheet('player', 'assets/boat.png', 26, 26);
         game.load.image('trash', 'assets/trash.png');
         game.load.spritesheet('dolphin', 'assets/dolphin.png', 26, 26);
@@ -33,9 +33,9 @@ window.onload = function() {
         game.stage.backgroundColor = '#787878';
         
         map = game.add.tilemap('Pacific');
-        map.addTilesetImage('water4', 'tiles');
+        map.addTilesetImage('water', 'tiles');
         
-        layer = map.createLayer('Ocean');
+        layer = map.createLayer('ocean');
         layer.resizeWorld();
         //layer.wrap = true;
         
