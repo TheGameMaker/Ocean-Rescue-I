@@ -17,7 +17,7 @@ window.onload = function() {
     
     function preload() {
         // Load an image and call it 'logo'.
-        game.load.tilemap('Pacific', 'assets/smallocean.json', null, Phaser.Tilemap.TILED_JSON);
+        game.load.tilemap('Pacific', 'assets/32x32ocean.json', null, Phaser.Tilemap.TILED_JSON);
         game.load.image('tiles', 'assets/water.png' );
         game.load.spritesheet('player', 'assets/boat.png', 26, 26);
         game.load.image('trash', 'assets/trash.png');
