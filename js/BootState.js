@@ -1,20 +1,20 @@
 var Phaser = Phaser || {};
-var Platformer = Platformer || {};
+var OceanRescue = OceanRescue || {};
 
 Platformer.BootState = function () {
     "use strict";
     Phaser.State.call(this);
 };
 
-Platformer.prototype = Object.create(Phaser.State.prototype);
-Platformer.prototype.constructor = Platformer.BootState;
+OceanRescue.prototype = Object.create(Phaser.State.prototype);
+OceanRescue.prototype.constructor = OceanRescue.BootState;
 
-Platformer.BootState.prototype.init = function (level_file) {
+OceanRescue.BootState.prototype.init = function (level_file) {
     "use strict";
     this.level_file = level_file;
 };
 
-Platformer.BootState.prototype.preload = function () {
+OceanRescue.BootState.prototype.preload = function () {
     "use strict";
     this.load.text("level1", this.level_file);
 };

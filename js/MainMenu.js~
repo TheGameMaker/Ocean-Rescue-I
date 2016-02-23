@@ -1,0 +1,15 @@
+//I found this through a tutorial on gamedevacademy
+var OceanRescue = OceanRescue || {};
+
+//title screen
+OceanRescue.MainMenu = function(){};
+
+OceanRescue.Mainmenu.prototype = {
+    init: function(score) {
+	var score = score || 0;
+	this.highScore = this.highScore || 0;
+
+	this.highscore = Math.max(score, this.highScore);
+    },
+    create: function() {
+	//show the
