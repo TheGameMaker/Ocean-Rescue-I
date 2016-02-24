@@ -32,6 +32,8 @@ OceanRescue.Game.prototype = {
 	//make camera follow the player
 	this.game.camera.follow(this.player);
 
+	this.cursors = this.game.input.keyboard.createCursorKeys();
+
 	this.generateTrash();
 	this.generateDolphins();
 
@@ -42,6 +44,23 @@ OceanRescue.Game.prototype = {
 	this.showLabels();
     },
     update: function() {
+	//movement and animation of player
+	if (this.cursors.left.isDown) {
+	    this.player.body.velocity.x = -26;
+	    this.player.animations.play('left');
+	}
+	if (this.cursors.right.isDown) {
+	    this.player.body.velocity.x = 26;
+	    this.player.animations.play('right');
+	}
+	if (this.cursors.up.isDown) {
+	    this.player.body.velocity.y = -26;
+	    this.player.animations.play('up');
+	}
+	if (this.cursors.down.isDown) {
+	    this.player.body.veloctiy.y = 26;
+	    this.player.animations.play('down');
+	}
 	//collision between player and trash
 	this.game.physics.arcade.overlap(this.player, this.trash, this.hitsTrash, null, this);
 	this.game.physics.aracade.overlap(this.dolphins, this.trash, this.eatsTrash, null, this);
