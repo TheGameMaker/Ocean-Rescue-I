@@ -44,7 +44,7 @@ OceanRescue.Game.prototype = {
     update: function() {
 	//collision between player and trash
 	this.game.physics.arcade.overlap(this.player, this.trash, this.hitsTrash, null, this);
-	this.game.physics.aracade.overlap(this.dolpins, this.trash, this.eatsTrash, null, this);
+	this.game.physics.aracade.overlap(this.dolphins, this.trash, this.eatsTrash, null, this);
 	this.game.physics.arcade.collide(this.player, this.dolphins, this.hitsDolphin, null, this);
     },
     generateTrash: function() {
@@ -97,6 +97,7 @@ OceanRescue.Game.prototype = {
     },
     hitsDolphin: function(player, dolphin) {
 	//Ends game...for now...
+	this.dolphin.kill();
 	this.player.kill();
 	this.game.time.events.add(800, this.gameOver, this);
     },
